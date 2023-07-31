@@ -24,10 +24,16 @@ function Home() {
       <input type="text" placeholder='search movie' value={movie} onChange={(e)=>setMovie(e.target.value)} />
 
       {moviedata.map((val)=>{
-        const {poster_path} = val;
+        const {poster_path,original_title,overview} = val;
         return(
 
+          <>
           <img src={imgpath + poster_path} alt="okay" />
+          <li>{original_title}</li><br/>
+          <h3>
+          {overview}
+          </h3>
+          </>
         )
       })}
       <button  onClick={movies}>click</button>
